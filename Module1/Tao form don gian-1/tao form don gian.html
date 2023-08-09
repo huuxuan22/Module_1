@@ -13,7 +13,7 @@
         }
         .inf{
             width: 500px;
-            height: 400px;
+            height: 300px;
             background-color: aqua;
             display: flex;
             justify-content: center;
@@ -21,51 +21,69 @@
         }
         .inf1{
             width: 400px;
-            height: 300px;
+            height: 200px;
             background-color:white;
             padding: 20px;
         }
-        h2{
+        h3{
             background-color: red;
             color: white;
             text-align: center;
-            padding: 15px 0 15px 0;
+            padding: 3px 0 3px 0;
+            margin-top: 0;
         }
-        td input{
+        .Ban,input {
+            margin-left: 20px;
+            border-left: 2px ridge gray;
+            border-top:2px ridge gray;
+            border-bottom: 0.5px solid grey;
+            border-right: 0.5px solid grey;
+        }
+        .ban1{
+            padding-left: 20px;
+        }
+        .check2{
+           padding:5px 5px 5px 0;
+        }
+        button{
+            border-left: none;
+            border-top:none;
+            border-bottom: 2px ridge gray;
+            border-right: 2px ridge gray;
+        }
 
-        }
     </style>
 </head>
 <body>
 <form class="inf">
     <div class="inf1">
         <table>
-            <h2>SỞ THÍCH CÚA BẠN</h2>
+            <h3>SỞ THÍCH CÚA BẠN</h3>
             <tr>
                 <td>họ và tên</td>
-                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id="" class="ban1"></td>
             </tr>
             <tr>
                 <td>email</td>
-                <td><input type="text" name="" id=""></td>
+                <td><input type="text" name="" id="" class="ban2"></td>
             </tr>
         </table>
-        <table>
+        <table class="check2">
             <tr>
                 <td>sở thích</td>
-                <td><input type="checkbox" name="">thể thao</td>
-                <td><input type="checkbox" name="">âm nhạc</td>
-                <td><input type="checkbox" name="">đọc sách</td>
+                <td><input type="checkbox" name="" class="Ban">thể thao</td>
+                <td><input type="checkbox" name="" class="Ban">âm nhạc</td>
+                <td><input type="checkbox" name="" class="Ban">đọc sách</td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="checkbox" name="">lướt web</td>
-                <td><input type="checkbox" name="">chơi game</td>
-                <td><input type="checkbox" name="">điện ảnh</td>
+                <td><input type="checkbox" name="" class="Ban">lướt web</td>
+                <td><input type="checkbox" name="" class="Ban">chơi game</td>
+                <td><input type="checkbox" name="" class="Ban">điện ảnh</td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="checkbox" name="">du lịch</td>
+                <td><input type="checkbox" name="" class="Ban">du lịch</td>
             </tr>
             <tr>
                 <td></td>

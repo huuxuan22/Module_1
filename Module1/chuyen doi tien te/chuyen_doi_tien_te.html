@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #select1{
+            padding: 3px 80px 3px 0px;
+            margin: 0 60px 0 60px;
+            border:groove;
+        }
+        #select2{
+            padding: 3px 80px 3px 0px;
+            margin-left: 8px;
+            border: groove;
+        }
+        th{
+            text-align: center;
+        }
+        button{
+            margin-left: 10px;
+            background-color: blueviolet;
+            color:white;
+        }
+        input{
+            border: groove;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="" id="dauvao">
+        </td>
+        <td>
+            <select id="select1">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="select2">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="chuyen_tien()">convert</button>
+
+            <script>
+        function chuyen_tien(){
+            let gia_tri_vao = document.getElementById('dauvao').value;
+            let select1 = document.getElementById('select1').value;
+            let select2 = document.getElementById('select2').value;
+            if(select1 !== select2){
+                document.write("Result: " + gia_tri_vao/24000+ "$");
+            }
+            else if(select1=="VND" && select2=="VND"){
+                document.write("Result: " + gia_tri_vao + "VND");
+            }
+            else if (select1 == "USD" && select2 =="USD"){
+                document.write("Result: " +      gia_tri_vao + "$");
+            }
+        }
+    </script>
+</body>
+</html>

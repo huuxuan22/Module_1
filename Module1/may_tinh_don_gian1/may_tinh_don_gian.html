@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td{
+            padding:3px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="" id="number1">
+<input type="text" name="" id="number2">
+<table id="tinh">
+    <tr>
+        <td><button onclick="tinhToan('cong')" value="cong">Addition(+)</button></td>
+        <td><button onclick="tinhToan('tru')" value="tru">Subtraction(-)</button></td>
+        <td><button onclick="tinhToan('nhan')" value="nhan">Multiplication(X)</button></td>
+        <td><button onclick="tinhToan('chia')" value="chia">Division(/)</button></td>
+    </tr>
+</table>
+<div id="display"></div>
+<script>
+    function tinhToan(thamSo){
+        let n1 = +document.getElementById('number1').value;
+        let n2 = +document.getElementById('number2').value;
+        let divElement = document.getElementById("display");
+        switch (thamSo) {
+            case "cong":
+                divElement.innerText = (n1+n2);
+                break;
+        }
+        switch (thamSo){
+            case "tru":
+                divElement.innerText = (n1-n2);
+        }
+        switch (thamSo){
+            case "nhan":
+                divElement.innerText = (n1*n2);
+        }
+        switch (thamSo){
+            case "chia":
+                divElement.innerText = (n1/n2);
+        }
+
+        // var count = document.getElementById('tinh').value;
+        // if(count == "cong"){
+        //     document.write(n1+n2);
+        // }
+    }
+</script>
+</body>
+</html>

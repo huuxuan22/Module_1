@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="" id="nhapngay">
+<button onclick="tinhDate()" value="thang">tính số ngày</button>
+<div id="display"></div>
+<script>
+    function tinhDate() {
+        let month = parseInt(document.getElementById('nhapngay').value);
+        let divElement = document.getElementById("display");
+        if (month == 2) {
+            divElement.innerText= "co 29 hoac 28 ngay";
+        } else if (month == 8 && thamso % 2 != 0) {
+            divElement.innerText = "co 31 ngay";
+        } else {
+            divElement.innerText ="co 30 ngay";
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div{
+           border: 5px solid black;
+            width: 300px;
+            height: auto;
+            margin: 0 auto;
+        }
+        table{
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            padding:10px 20px 10px 20px;
+            margin:10px;
+            color: blue;
+            border: groove;
+        }
+        .table-2{
+            display: flex;
+            justify-content: center;
+        }
+        .play{
+            margin: auto;
+            width: 95%;
+            justify-content: center;
+            margin-top: 10px;
+            height: 50px;
+            border: groove;
+            text-align: right;
+            font-size: 40px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+     <div class="div">
+         <div class="play">
+             <div id="display"></div>
+         </div>
+         <div class="table-2">
+             <table>
+                 <tr>
+                     <td><input type="button" value="1" onclick="add(this.value)"></input></td>
+                     <td><input type="button" value="2" onclick="add(this.value)"></input></td>
+                     <td><input type="button" value="3" onclick="add(this.value)"></input></td>
+                     <td><input type="button" value="+" onclick="add(this.value)"></td>
+                 </tr>
+                 <tr>
+                     <td><input type="button" value="4" onclick="add(this.value)"></td>
+                     <td><input type="button" value="5" onclick="add(this.value)"></td>
+                     <td><input type="button" value="6" onclick="add(this.value)"></td>
+                     <td><input type="button" value="-" onclick="add(this.value)"></td>
+                 </tr>
+                 <tr>
+                     <td><input type="button" value="7" onclick="add(this.value)"></td>
+                     <td><input type="button" value="8" onclick="add(this.value)"></td>
+                     <td><input type="button" value="9" onclick="add(this.value)"></td>
+                     <td><input type="button" value="*" onclick="add(this.value)"></td>
+                 </tr>
+                 <tr>
+                     <td><input type="button" value="C" onclick="reset(this.value)"></td>
+                     <td><input type="button" value="0" onclick="add(this.value)"></td>
+                     <td><input type="button" value="=" onclick="caculate()"></td>
+                     <td><input type="button" value="/" onclick="add(this.value)"></td>
+                 </tr>
+             </table>
+         </div>
+     </div>
+     <script>
+         var valueCur = "";
+         function add(a){
+             valueCur += a;
+             document.getElementById("display").innerText = valueCur;
+         }
+         function reset(){
+             valueCur ="";
+             document.getElementById("display").innerText = valueCur;
+         }
+
+         function caculate(){
+           var valuecure = eval(valueCur);
+               valueCur  = valuecure;
+               document.getElementById("display").innerText = valueCur;
+         }
+     </script>
+</body>
+</html>

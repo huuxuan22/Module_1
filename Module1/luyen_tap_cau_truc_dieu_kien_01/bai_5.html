@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // Nhập điểm bài kiểm tra, điểm thi giữa kỳ và điểm thi cuối kỳ từ người dùng
+       var quizScore = parseFloat(prompt("Nhập điểm bài kiểm tra:"));
+       var midtermScore = parseFloat(prompt("Nhập điểm thi giữa kỳ:"));
+       var finalScore = parseFloat(prompt("Nhập điểm thi cuối kỳ:"));
+
+       // Tính điểm trung bình
+       var averageScore = (quizScore + midtermScore + finalScore) / 3;
+
+       // Xác định hạng học lực dựa trên điểm trung bình
+       var rank = "";
+       if (averageScore >= 8.5) {
+           rank = "Xuất sắc";
+       } else if (averageScore >= 7) {
+           rank = "Giỏi";
+       } else if (averageScore >= 5.5) {
+           rank = "Khá";
+       } else if (averageScore >= 4) {
+           rank = "Trung bình";
+       } else {
+           rank = "Yếu";
+       }
+
+       // Hiển thị kết quả
+       console.log("Điểm trung bình: " + averageScore.toFixed(2));
+       console.log("Hạng học lực: " + rank);
+   </script>
+</body>
+</html>

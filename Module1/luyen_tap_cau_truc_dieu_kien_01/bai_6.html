@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // Nhập mức doanh số bán hàng từ người dùng
+       var salesAmount = parseFloat(prompt("Nhập mức doanh số bán hàng:"));
+
+       // Xác định hoa hồng dựa trên mức doanh số
+       var commission = 0;
+       if (salesAmount <= 1000) {
+           commission = salesAmount * 0.05; // 5% hoa hồng
+       } else if (salesAmount <= 5000) {
+           commission = salesAmount * 0.1; // 10% hoa hồng
+       } else if (salesAmount <= 10000) {
+           commission = salesAmount * 0.15; // 15% hoa hồng
+       } else {
+           commission = salesAmount * 0.2; // 20% hoa hồng
+       }
+       // hiển thị mức danh thu về hoa hồng
+       console.log("Mức danh số bán hàng: $" + salesAmount);
+       console.log("mức hao hồng nhận được:" + commission);
+   </script>
+</body>
+</html>

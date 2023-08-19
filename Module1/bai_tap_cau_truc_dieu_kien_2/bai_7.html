@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //nhập vào 3 số a b và c của phương trình
+    var a = parseFloat(prompt("a= "));
+    var b = parseFloat(prompt("b= "));
+    var c = parseFloat(prompt("c= "));
+
+    // giải phương trình bậc 2
+    function  QuaDraticEquation2(a, b, c) {
+        if (a === 0) {
+            // trường hợp a = 0 thì phương trình trở về phương trình bậc nhất bx + c = 0
+            if (b === 0) {
+                if (c === 0) {
+                    return "phuong trinh co vo so nghiem ";
+                } else {
+                    return "phuong trinh vo nghiem";
+                }
+            } else
+            {
+                const x = -c / (2 * b);
+                return "Phương trình có nghiệm kép:\nx = " + x;
+            }
+        } else
+        {
+            const delta = b * b - 4 * a * c;
+            if (delta > 0) {
+
+                // tính toán 2 nghiệm cua phương trình
+                const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+                // hiển thị 2 nghiệm của phương trình
+                return "Phương trình có hai nghiệm phân biệt:\nx1 = " + x1 + "\nx2 = " + x2;
+            } else if (delta < 0) { // trường hợp phương trình có một nghiệm
+
+                const x = -b / (2 * a);
+                return "Phương trình có nghiệm kép:\nx = " + x;
+            } else {
+                // trường hợp phương trình vô nghiệm delta = 0
+                return "phương trình vô nghiệm";
+            }
+        }
+    }
+    const result = QuaDraticEquation2(a, b, c);
+    console.log(result);
+</script>
+</body>
+</html>

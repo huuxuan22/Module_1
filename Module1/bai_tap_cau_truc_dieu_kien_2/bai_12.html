@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+            //hàm tính lãi ngân hàng
+            function calculateInterest(intial, interest, month){
+                var money = intial * Math.pow(( 1 + interest/100), month);
+                return money;
+            }
+            // nhập số tiền ban đầu, lãi suất hàng tháng, số tháng cho vay
+            var intial   = parseInt(prompt("so tien ban dau cua ban la: ")); // số tiền ban đầu gửi ngân hàng
+            var interest = parseInt(prompt("lai suat hang thang la: "));   // lãi suất theo hàng tháng
+            var month    = parseInt(prompt("so thang")); // số tháng cho vay
+
+            var money = calculateInterest(intial,interest,month);
+            console.log("Lãi ngân hàng là: " + money + " VNĐ");
+     </script>
+</body>
+</html>

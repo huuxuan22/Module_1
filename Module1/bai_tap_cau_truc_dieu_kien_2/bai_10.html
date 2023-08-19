@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var totalBill = 0;
+        function calculateElectricityBill(consumedUnits){
+            var  baseRate     = 1000; // giá cơ bản cho mức tiêu thụ dưới ngưỡng
+            var  tieredRate   = 1500; // giá tăng dần cho mức tiêu thụ vượt ngưỡng
+            var  tieThreshold = 200;  // Ngưỡng mức tiêu thụ vượt qua để áp dụng giá tăng dần
+
+            // tính giá điện
+            if(consumedUnits < tieThreshold){
+                totalBill = consumedUnits * baseRate;
+            }else
+            {
+                const baseCost = tieThreshold * baseRate;
+                const extraUnits = consumedUnits - tieThreshold;
+                const extraCost = extraUnits * tieredRate;
+                totalBill = baseCost + extraCost;
+            }
+
+            return totalBill;
+        }
+
+        // nhap so tien dien can phai tinh
+        var consumedUnits = parseInt(prompt("moi ban nhap so dien "));
+        var money = calculateElectricityBill(consumedUnits);
+
+        // hiển thị tiền điện phải trả
+        console.log("Số tiền phải trả là: " + money + "VNĐ");
+    </script>
+</body>
+</html>

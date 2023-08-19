@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // hàm tính thuế
+       function incomTaxcaculation(Income) {
+           const level1 = 0.05;// thuế thu nhập với 5% (mức 0-5 triệu)
+           const level2 = 0.1; // thuế thu nhập với 10% ( mức 5 - 10 triệu)
+           const level3 = 0.2; // thuế thu nhập với 20% ( mức 10 - 18 triệu)
+           const level4 = 0.25; // thuế thu nhập với 30% ( mức 18 - 32 triệu)
+           const level5 = 0.30;// thuế thu nhập với 35% ( mức 32 - 52 triệu)
+           const level6 = 0.35;// thuế thu nhập với 35% ( mức trên 52 triệu)
+
+           if (Income > 5 && Income <= 10) {
+               return (Income * level1);
+           } else if (Income > 10 && Income <= 18) {
+               return (Income * level1) + (Income * level2);
+           } else if (Income > 18 && Income <= 32) {
+               return (Income * level1) + (Income * level2) + (Income * level3);
+           } else if (Income > 32 && Income <= 52) {
+               return  (Income * level1) + (Income * level2) + (Income * level3) + (Income * level4);
+           } else {
+               return (Income * level1) + (Income * level2) + (Income * level3) + (Income * level4) + (Income * level5);
+           }
+       }
+           // cứ mỗi lần số tiền nhập vào thì ta chỉ tính những thu nhập dưới ngưỡng của nó đang đứng
+           // ví dụ: bạn làm được 15tr thì sẽ ở mức level3
+           //  tiền thuế = (thu nhập * level1) + (thu nhập * level2)
+
+
+       //điền số tiền cần phải kiểm tra
+       var Income = parseFloat(prompt("thu nhập của bạn là bao nhiêu : "));
+       var  moneyTax = incomTaxcaculation(Income);
+       console.log("số tiền thuế của bạn là: "+ moneyTax +"triệu VNĐ");
+
+   </script>
+</body>
+</html>

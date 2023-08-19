@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // nhap vao 2 so a va b
+    var a = parseFloat(prompt("moi ban nhap a= "));
+    var b = parseFloat(prompt("moi ban nhap b= "));
+
+    // giai phuong trinh bac nhat ax + b = 0;
+    function solveLinearEquation(a, b){
+        var x;
+        if(a==0){
+            if(b==0){
+                console.log("phuong trinh co vo so nghiem ");
+            }
+            else{
+                console.log("phuong trinh vo nghiem");
+            }
+        }
+
+        else {
+            const x = -b / (2 * a);
+            console.log("Phương trình có nghiệm kép:\nx = " + x);
+        }
+    }
+</script>
+</body>
+</html>

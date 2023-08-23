@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // nhap vao chieu dai va chieu rong cua hinh chu nhat
+       var cr = parseInt(prompt("nhap vao chieu rong: "));
+       var cd = parseInt(prompt("nhap vao chieu dai: "));
+
+       for(let i = 1; i <= cr; i++){
+           for(let j = 1; j <= cd; j++){
+               if (i === 1 || i === cr || j === 1 || j === cd){
+                   document.write("*");
+               }
+               else{
+                   document.write("&nbsp&nbsp");
+               }
+           }
+           document.write("<br>");
+       }
+   </script>
+</body>
+</html>

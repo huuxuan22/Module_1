@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="bắt đầu" id="startButton">
+    <div class="display">
+        <div id="display"></div>
+    </div>
+    <script>
+        document.getElementById("startButton").addEventListener("click", function () {
+
+            // khai báo miền giá trị mà người chơi muốn đoán ví dụ ơ [10 , 100] với a = 10 và b = 100
+            var a = parseInt(prompt("Đoán số trong khoảng từ từ a = "));
+            var b = parseInt(prompt("đến b = "));
+
+            // chọn số ngẫu nhiên trong vùng giá trị mà ta đã chọn [a , b]
+            const targetNumber = Math.floor((Math.random() * b) + a);
+
+            // khai báo biến đếm với số lần chơi 
+            var i = 0;
+
+            // số liệu mà người chơi muốn nhập vào để đoán
+            var c;
+            while ((i < 4) && (c = parseInt(prompt("nhap c = ")))) {
+                if (c > targetNumber) {
+                    alert("số bạn đoán lớn hơn");
+                }
+                else if (c < targetNumber) {
+                    alert("số bạn đoán nhỏ hơn");
+                }
+                else if (c === targetNumber) {
+                    document.getElementById('display').innerText = "Bạn đã đoán đúng số, chúc mừng bạn !";
+                    break;
+                }
+                i++;// i = i + 1
+            }
+            if (i === 4) {
+                alert("Bạn đã hết lần đoán .");
+            }
+        })
+    </script>
+</body>
+
+</html>

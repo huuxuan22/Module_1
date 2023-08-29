@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt('Bạn muốn nhập mảng có độ dài là: '));
+        var arr = new Array(a);
+        for(let i=0;i<arr.length;i++){
+            arr[i] = parseInt(prompt('nhập mảng'));
+        }
+        console.log('mảng của bạn là: ');
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        for(let i=0;i<arr.length;i++){
+            for (let j=i+1;j<arr.length;j++){
+                if(arr[i] < arr[j]){
+                    let temp = arr[i];
+                       arr[i]= arr[j];
+                       arr[j]= temp;
+                }
+            }
+        }
+        console.log('mảng của bạn sau đó là: ');
+        for (let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+    </script>
+</body>
+</html>

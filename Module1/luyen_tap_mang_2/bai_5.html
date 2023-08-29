@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       var a = parseInt(prompt('bạn muốn nhập độ dài của chuỗi 1 là bao nhiêu:'));
+       var b = parseInt(prompt('bạn muốn nhập độ dài của chuỗi 2 là bao nhiêu'));
+       var arr = new Array(a);
+       var brr = new Array(b);
+       // nhập vào chuỗi 1
+       for(let i=0;i<arr.length;i++){
+           arr[i] = prompt('nhập kí tự thứ ' + i);
+       }
+       // nhập vào chuỗi 2
+       for(let i=0;i<arr.length;i++){
+           brr[i] = prompt('nhập kí tự thứ ' + i);
+       }
+       if(arr === brr){
+           console.log('hai chuỗi bằng nhau');
+       }
+       else {
+           console.log('hai chuỗi không bằng nhau');
+       }
+   </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt("bạn muốn nhập mảng có chiều dài bao nhiêu: "))
+        var b = new Array(a);
+        for(let i=0;i<b.length;i++){
+            b[i] = prompt("kí tự thứ "+ i + ": ");
+        }
+        var count = 0;
+        for(let i=0;i<b.length;i++){
+            if(!isNaN(b[i])){
+                count++;
+            }
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

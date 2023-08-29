@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       const str = prompt("nhập dong chữ");// nhập vào dòng chữ muốn thay đôir
+        let uppercaseString = [];
+
+       for(let i=0;i<=str.length - 1;i++)// duyệt các phần tử trong mảng từ đầu tới cuối xem thử chữ cái tại vị trí i của mảng là chữ thường thì đổi thành chữ hoa và ngược lại
+       {
+           if(str[i] >= 'A' && str[i] <= 'Z'){
+               uppercaseString.push(str[i].toLowerCase());
+           }else{
+               uppercaseString.push(str[i].toUpperCase());
+           }
+       }
+       console.log(uppercaseString.join(' '));
+   </script>
+</body>
+</html>

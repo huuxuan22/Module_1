@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div id="display"></div>
+</div>
+   <script>
+       var arr = new Array(10);
+       var brr = new Array(10);
+       for (let i=0;i<arr.length;i++){
+           arr[i] = Math.floor(Math.random()*15 + 1);// thực hiện quá trình nhập vào dãy số
+       }
+       console.log("Những phần tử trước khi đảo ngược là: ")
+       for (let i=0;i<arr.length;i++){
+           console.log( arr[i]);
+       }
+       for (let i=arr.length-1, j=0; i >= 0 && j < brr.length; i--, j++){
+           brr[j] = arr[i];
+       }
+       for (let i=0;i<brr.length;i++){
+           arr[i] = brr[i];
+       }
+       console.log("Những phần tử sau khi đảo ngược là: ")
+       for (let i=0;i<arr.length;i++)
+       {
+           console.log(arr[i]);
+       }
+   </script>
+</body>
+</html>

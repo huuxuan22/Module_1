@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="English" id="English">
+<input type="button" value="dich" onclick="getValue()">
+<div class="">
+    <div id="display"></div>
+</div>
+<script>
+   function getValue (){
+       var engLish = document.getElementById('English').value;
+       var vietnamese = ['man', 'tao'];
+       var wareHouse = ['plum','apple'];
+       for(let i=0;i<engLish.length;i++){
+            if (engLish === wareHouse[i]){
+                document.getElementById('display').innerText = vietnamese[i];
+            }
+       }
+   }
+</script>
+</body>
+</html>

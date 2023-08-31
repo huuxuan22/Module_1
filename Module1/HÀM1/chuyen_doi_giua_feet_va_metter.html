@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+      <div id="display1"></div>
+      <div id="display2"></div>
+    </div>
+    <script>
+      // hàm chuyển đổi foot sang meter
+      function footToMeter(foot){
+        return 0.305 * foot;
+      }
+      // hàm chuyển đổi meter sang foot
+      function meterToFoot(meter){
+        return 3.279*meter;
+      }
+
+      var meter = parseInt(prompt('nhap meter: '));
+      var foot  = parseInt(prompt('nhap foot: '));
+
+      var foot_meter = footToMeter(foot);
+      var meter_foot  = meterToFoot(meter);
+      document.getElementById('display1').innerText = meter + ' meter = ' + meter_foot + "foot";
+      document.getElementById('display2').innerText = foot  + ' foot = ' + foot_meter + "meter";
+    </script>
+</body>
+</html>

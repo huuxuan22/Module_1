@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // hàm kiểm tra số nguyên tố
+       function isPrime(number){
+           let count = 0;
+           for (let i=2;i<number/2;i++){
+               if(number%i!==0)
+                   count++;
+           }
+           if(count===0)
+               return 0;
+           else
+               return -1;
+       }
+
+
+       do{
+           let number = parseInt(prompt('nhap: '));
+           if(number === 0 || number === 1)
+           {
+               alert('Không phải là số nguyên tố');
+               break;
+           }
+           else if(isPrime(number))
+           {
+               alert(number + " là số nguyên tố");
+               break;
+           }
+           else{
+               alert(number + " không phải là số nguyên tố");
+               break;
+           }
+       } while(number > 0);
+   </script>
+</body>
+</html>

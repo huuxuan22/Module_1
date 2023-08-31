@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Constellations</title>
+</head>
+<body>
+<script>
+    const stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    const constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function findConstellation(starName) {
+        const index = stars.indexOf(starName);
+        if (index !== -1) {
+            return constellations[index];
+        } else {
+            return "Không tìm thấy thông tin cho ngôi sao này.";
+        }
+    }
+
+    const userInput = prompt("Nhập tên của một ngôi sao:");
+    const constellationName = findConstellation(userInput);
+    alert(constellationName);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var number1 = parseInt(prompt("Nhập vào số thứ 1: "));
+        var number2 = parseInt(prompt("Nhập vào số thứ 2: "));
+        console.log("hai số trước khi hoán đổi là: " +  number1 + number2);
+        function swapIntegers(a,b){
+            var temp = a;
+                 a   = b;
+                 b   = temp;
+            return [a,b];
+        }
+        [number1,number2] = swapIntegers(number1,number2);
+        console.log("Hai số nguyên sau khi hoán đổi là: "+ number1 + " " + number2);
+    </script>
+</body>
+</html>

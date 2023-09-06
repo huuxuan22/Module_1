@@ -17,11 +17,11 @@
             alert(constellation);
         }
         function findConstellation(starName){
-            for (let i=0; i< star.length; i++){
-                if(starName === star[i]){
+            for (let i=0; i< starName.length; i++){
+                if(starName === star[i] ){
                     return constellationNames[i];
                 }else{
-                    return star[i];
+                    return starName;
                 }
             }
         }

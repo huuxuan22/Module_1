@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gửi Tin Nhắn</title>
+    <style>
+        #message {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<h1>Gửi Tin Nhắn</h1>
+<input type="text" id="message" placeholder="Nhập tin nhắn...">
+<button id="sendButton">Gửi</button>
+<div id="messageDisplay"></div>
+
+<script>
+    const messageInput = document.getElementById('message');
+    const sendButton = document.getElementById('sendButton');
+    const messageDisplay = document.getElementById('messageDisplay');
+
+    sendButton.addEventListener('click', () => {
+        const messageText = messageInput.value;
+        if (messageText.trim() !== '') {
+            sendMessage(messageText);
+            messageInput.value = '';
+        }
+    });
+
+    function sendMessage(message) {
+        // Thực hiện các thao tác để gửi tin nhắn ở đây (ví dụ: lưu vào cơ sở dữ liệu hoặc gửi qua mạng).
+
+        // Hiển thị tin nhắn đã gửi lên giao diện người dùng.
+        const messageElement = document.createElement('div');
+        messageElement.innerText = message;
+        messageDisplay.appendChild(messageElement);
+    }
+</script>
+</body>
+</html>

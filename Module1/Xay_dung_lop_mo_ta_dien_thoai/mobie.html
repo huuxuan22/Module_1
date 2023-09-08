@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .nokia{
+            width: 200px;
+            height: 200px;
+            border: solid black;
+        }
+        .iphone{
+            width: 200px;
+            height: 200px;
+            border: solid black;
+        }
+    </style>
+</head>
+<body>
+    // điện thoại nokia
+    <div class="nokia">
+        <input type="text" id="composeMessage1">
+        <input type="button" value="gởi tin nhắn" id="send1">
+        <div id="checkbox1"></div>
+    </div>
+
+
+    //điện thoại iphone
+    <div class="iphone">
+        <input type="text" id="composeMessage2">
+        <input type="button" value="gởi tin nhắn" id="send2">
+        <div id="checkbox2"></div>
+    </div>
+    <script>
+            let mobileNokia = function (message) {
+                this.message = message;
+
+                this.setSendMessage = function () {
+                    this.message = document.getElementById('composeMessage1').value;
+                }
+
+                this.getSendMessage = function () {
+                    return this.message;
+                }
+            };
+
+            let mobileIphone = function (message) {
+                this.message = message;
+
+                this.setSendMessage = function () {
+                    this.message = document.getElementById('composeMessage2').value;
+                }
+
+                this.getSendMessage = function () {
+                    return this.message;
+                }
+            };
+
+            document.getElementById('send1').addEventListener('click',function ()  {
+                let getMessage = document.getElementById('composeMessage1').value;
+                let Message = new mobileNokia(getMessage);
+                Message.setSendMessage();
+                document.getElementById('checkbox2').innerText = Message.getSendMessage();
+            });
+
+            document.getElementById('send2').addEventListener('click',function ()  {
+                let getMessage = document.getElementById('composeMessage2').value;
+                let Message = new mobileIphone(getMessage);
+                Message.setSendMessage();
+                document.getElementById('checkbox1').innerText = Message.getSendMessage();
+            });
+    </script>
+</body>
+</html>

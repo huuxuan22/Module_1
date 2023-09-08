@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <div>
+        <div id="display"></div>
+    </div>
+    <div>
+        <div id="display1"></div>
+    </div>
+    <script>
+        let Rectangle = function (length, width){
+            this.length = length;
+            this.width = width;
+
+            // thay đổi chiều rộng và chiều dài của hình chữ nhât
+            this.setLength = function (){
+                this.Length = length;
+            }
+            this.setWidth = function (){
+                this.Width = width;
+            }
+
+            // tính chu vi
+            this.getCalculateTheRectangulArea = function (){
+                return length*width;
+            }
+
+            // tính chu vi
+            this.getCircumference = function (){
+                return (length+width)/2.0;
+            }
+            // vẽ hình chữ nhật
+            this.drawRectangle = function (){
+                var c = document.getElementById('myCanvas');
+                var context = c.getContext('2d');
+                context.fillStyle = 'blue';
+                context.fillRect(0,0,length,width);
+            }
+        };
+
+        let a = parseInt(prompt("nhập vào chiều dài"));// chiều dài
+        let b = parseInt(prompt("nhập vào chiều rộng"));// chiều rộng
+        let rectangle =new Rectangle(a, b);
+        rectangle.setLength(a);
+        rectangle.setWidth(b);
+
+        let Area = rectangle.getCalculateTheRectangulArea();
+        let Circumference = rectangle.getCircumference();
+
+        rectangle.drawRectangle();
+
+        document.getElementById('display').innerText = "diện tích hình chữ nhật là: : "+ Area;
+        document.getElementById('display1').innerText = "chu vi hình chữ nhật là: " + Circumference;
+    </script>
+</body>
+</html>

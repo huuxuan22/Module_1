@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    let money = parseInt(prompt("nhập vào lương của nhân viên: "));
+    if(money > 15000000)
+      money = money-money*0.2;
+    else if (money > 7000000 && money <15000000)
+      money = money - money*0.1;
+    else
+      money = money - money*0.05;
+    alert("số lương của nhân viên còn lại là: " + money + "VNĐ");
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let m = parseInt(prompt("bạn muốn nhập mảng có mấy hàng:"));
+            let n = parseInt(prompt("bạn muốn nhập mảng có mấy cột"));
+            let arr = new Array(m);
+            for (let i=0;i<arr.length;i++){
+                arr[i] = new Array(n);
+            }
+
+                for (let i=0;i<m;i++){
+                    for (let j=0;j<n;j++){
+                        arr[i][j] = Math.floor(Math.random()*100+1);// giá trị tại từng vị trí của mảng vừa cho bằng cách ngẫu nhiên bằng hàm random
+                    }
+                }
+            // hiển thị mảng sau khi nhập
+            console.log("mảng của bạn sau khi nhập là:");
+            for (let i=0;i<m;i++){
+                for (let j=0;j<n;j++){
+                    console.log("a[" + i + "]" + "[" + j + "] = " + arr[i][j]);
+                }
+            }
+
+            // hàm đếm số nguyên tố
+            function countIsprime(arr) {
+                let count = 0;
+                for (let i=0;i<m;i++){
+                    for (let j=0;j<n;j++){
+                        if (isPrime(arr[i][j])){
+                            count++;
+                        }
+                    }
+                }
+                return count;
+            }
+
+
+            // hàm liệt kê số nguyên tố
+            function enumerateIsPrime(arr) {
+                for (let i=0;i<m;i++){
+                    for (let j=0;j<n;j++){
+                        if (isPrime(arr[i][j])){
+                            console.log(arr[i][j]);
+                        }
+                    }
+                }
+            }
+
+            // hàm kiểm tra số nguyên tố
+            function isPrime(a) {
+                let count = 0;
+                if (a<=1)
+                    return false;
+                for (let i=2;i<=Math.sqrt(a);i++){
+                    if (a%i===0){
+                        count++;
+                    }
+                }
+                return count === 0;
+            }
+            console.log("Tổng số nguyên tố có trong mảng là: " + countIsprime(arr));
+            console.log("số nguyên tố có trong mảng là: ");
+            enumerateIsPrime(arr);
+
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m = parseInt(prompt("bạn muốn nhập mảng có mấy hàng:"));
+        let n = parseInt(prompt("bạn muốn nhập mảng có mấy cột"));
+        let arr = new Array(m);
+        let i=0,j=0;
+        for (i=0;i<arr.length;i++){
+            arr[i] = new Array(n);
+        }
+        function eventTotal(arr) {
+            for (i=0;i<m;i++){
+                for (j=0;j<n;j++){
+                    arr[i][j] = Math.floor(Math.random()*100+1);// giá trị tại từng vị trí của mảng vừa cho bằng cách ngẫu nhiên bằng hàm random
+                }
+            }
+            let sum = 0;
+            for (i=0;i<m;i++){
+                for (j=0;j<n;j++){
+                    if (arr[i][j] % 2 === 0){
+                        sum += arr[i][j]; // tính tổng
+                    }
+                }
+            }
+            return sum;
+        }
+        alert(eventTotal(arr));
+    </script>
+</body>
+</html>

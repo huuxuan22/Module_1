@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m = parseInt(prompt("bạn muốn nhập mảng có mấy hàng:"));
+        let n = parseInt(prompt("bạn muốn nhập mảng có mấy cột"));
+        let arr = new Array(m);
+        for (let i=0;i<arr.length;i++){
+            arr[i] = new Array(n);
+        }
+
+        for (let i=0;i<m;i++){
+            for (let j=0;j<n;j++){
+                arr[i][j] = Math.floor(Math.random()*100+1);// giá trị tại từng vị trí của mảng vừa cho bằng cách ngẫu nhiên bằng hàm random
+            }
+        }
+        // hiển thị mảng sau khi nhập
+        console.log("mảng của bạn sau khi nhập là:");
+        for (let i=0;i<m;i++){
+            for (let j=0;j<n;j++){
+                console.log("a[" + i + "]" + "[" + j + "] = " + arr[i][j]);
+            }
+        }
+
+        // hàm tìm giá trị lớn nhất trong mảng
+        function maxArray(arr) {
+            let max = arr[0][0];
+            for (let i=0;i<m;i++){
+                for (let j=i+1;j<n;j++){
+                    if (max < arr[i][j]){
+                        max = arr[i][j];
+                    }
+                }
+            }
+            return max;
+        }
+
+        // hàm tìm giá trị nhỏ nhất
+        function minArray(arr) {
+            let min = arr[0][0];
+            for (let i=0;i<m;i++){
+                for (let j=i+1;j<n;j++){
+                    if (min > arr[i][j]){
+                        min = arr[i][j];
+                    }
+                }
+            }
+            return min;
+        }
+        console.log("giá trị lớn nhất có trong mảng là: " + maxArray(arr));
+        console.log("giá trị nhỏ nhất có trong mảng là: " + minArray(arr));
+    </script>
+</body>
+</html>

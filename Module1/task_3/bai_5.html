@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bắt sự kiện phím 1-9</title>
+</head>
+<body>
+<script>
+    // Bắt sự kiện keydown trên document
+    document.addEventListener("keydown", function(event) {
+        // Lấy mã ASCII của phím được nhấn
+        var keyCode = event.keyCode || event.which;
+
+        // Kiểm tra xem phím có nằm trong khoảng từ 1 đến 9 không (mã ASCII từ 49 đến 57)
+        if (keyCode >= 49 && keyCode <= 57) {
+            // Xử lý sự kiện tại đây
+            var numberPressed = String.fromCharCode(keyCode);
+            console.log("Bạn đã nhấn số " + numberPressed);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let A = [1,2,2,4,3,4,5,6,9];
+        let B = [5,6,7,8,4,5,1,9,10,0,66,45,78];
+        const C = [];
+        for (let i=0;i<A.length;i++) {
+            for (let j = 0; j < B.length; j++) {
+                if (B[j] === A[i]) {
+                    C.push(B[j]);
+                }
+            }
+        }
+
+        for (let i=0;i<C.length;i++){
+            for (let j=0;j<B.length;j++){
+                if(C[i] === B[j]){
+                    for (let k = j;k < B.length;k++){
+                        B[k] = B[k+1];
+                    }
+                }
+            }
+        }
+        let missingValue = [];
+       for (let i=0;i<B.length;i++){
+           if(B[i] !== undefined){
+               missingValue.push(B[i]);
+           }
+       }
+       for (let i=0;i<C.length;i++){
+           console.log(missingValue[i]);
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s1 = ['a', 'a', 'b', 'c', 'c'];
+        let s2 = ['a', 'd', 'c', 'a', 'a'];
+        function commonCharacterCount(s1,s2) {
+            let i=0, j=0,k=0;
+            const s3 = [];// lọc ra những phần tử giống nhau của 2 mảng vào 1 mảng mặc dù chúng giống nhau vd mảng [a,a,a,a,a,a,c,c]
+            for (i=0;i<s1.length;i++){
+                for (let j=0;j<s2.length;j++){
+                    if (s1[i] === s2[j]){
+                        s3[k] = s1[i];
+                        k++;
+                    }
+                }
+            }
+            let char = s3[0];
+            let result = [];
+            k=0;
+            // rút  gọn mảng vừa lấy bỏ đi những phần tử khác nhau và chỉ để lại mảng có các phần tử khác nhau
+            for (i=0;i<s3.length;i++){
+                if (i===s3.length-1){
+                    break;
+                }
+                if (char !== s3[i]){
+                    result[k] = s3[i];
+                    k++;
+                }
+            }
+            result.unshift(char);// thêm kí tự char vào đầu mảng result
+            return result;
+        }
+        alert(commonCharacterCount(s1,s2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ol>
+    <li>Cafe</li>
+    <li>cam vat</li>
+    <li>Nước ép cà rốt</li>
+    <li>Nước ép cà chua</li>
+    <li>Nước lọc</li>
+    <li>Nước dừa</li>
+    <li>Thoát gọi món</li>
+</ol>
+<script>
+    let price ;
+    let n;
+    do {
+        let amount = parseInt(prompt("Nhập vào số lượng: "));
+        n = parseInt(prompt("Nhập vào món muốn chọn:"));
+        switch (n){
+            case 1:
+                price = 10000;
+                alert("Hóa đơn: cà phê " + price*amount +"VND");
+                break;
+            case 2:
+                price = 10000;
+                alert("Hóa đơn: cam vắt " + price* amount + "VNĐ");
+                break;
+            case 3:
+                price = 12000;
+                alert("Hóa đơn: nước ép cà rốt " + price* amount + "VNĐ");
+                break;
+            case 4:
+                price = 13000;
+                alert("Hóa đơn: nước ép cà chua " + price* amount + "VNĐ");
+                break;
+            case 5:
+                price = 14000;
+                alert("Hóa đơn: nước lọc " + price * amount + "VNĐ");
+                break;
+            case 6:
+                price = 9000;
+                alert("hóa đơn: nước dừa " + price * amount + "VNĐ");
+                break;
+        }
+
+    }while ( n > 0 && n <7)
+</script>
+</body>
+</html>

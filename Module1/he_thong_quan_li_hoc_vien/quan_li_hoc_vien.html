@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addAStudent()">Thêm mới học viên</button>
+    <button onclick="editAStudent()">Sửa thông tin học viên</button>
+    <button onclick="deleteAStudent()">Xóa học viên</button>
+    <div id="content"></div>
+    <script>
+        class Student{
+            constructor(studentCode,Name, className,Email, birthday, module) {
+                this.studentCode = studentCode;
+                this.Name = Name;
+                this.className = className;
+                this.Email = Email;
+                this.birthday = birthday;
+                this.module = module;
+            }
+            setNameStudent(nameStudent) {
+                this.nameStudent = nameStudent;
+            }
+        }
+        let student = [];
+        student.push(new Student("HV-0001","Nguyễn Văn A","C1022G1","Nguyenvana@gmail.com","12/02/2004",1));
+        student.push(new Student("HV-0002","Nguyễn Văn B","C1122G1","NguyenvanB@gmail.com","21/11/2005",2));
+        student.push(new Student("HV-0003","Nguyễn Văn C","C1222G1","NguyenvanC@gmail.com","22/04/2004",3));
+
+        function display(){
+            let data = "";
+            data += "<table border='1px' width='800px' style='text-align: center'>" +
+            "<tr>"+
+                "<th>Ma hoc vien</th>" +
+                "<th>Ten</th>" +
+                "<th>Lop</th>" +
+                "<th>Email</th>" +
+                "<th>Ngaysinh</th>" +
+                "<th>Module</th>"+
+            "<tr/>"
+            for (let temp of student){
+                data += "<tr>" +
+                        "<td>" + temp.studentCode +"</td>" +
+                        "<td>" + temp.Name + "</td>" +
+                        "<td>" + temp.className +" </td>" +
+                        "<td>" + temp.Email + "</td>" +
+                        "<td>" + temp.birthday +" </td>" +
+                        "<td>" + temp.module + "</td>" +
+                    "<tr/>"
+            }
+            data += "<table/>";
+            document.getElementById("content").innerHTML = data;
+        }
+        display();
+        // thêm vào danh sách một học viên
+        function checkID() {
+            
+        }
+
+        // hàm kiểm tra kí tự bạn đang xét có phải là 1 số hay không
+        function Integer(number) {
+            if (number >= 0 && number <= 9)
+                return true;
+        }
+
+        // hàm kiểm tra xem bốn số cuối có phải là những số từ 0 đến 9 hay không.và bạn nhập có đúng yêu cầu hay không
+        function checkNumber(Arr) {
+            if (Arr.length !== 7){
+                return false
+            }
+            let arr = Arr.split("");
+            if (Arr[6] === '1' || Arr[6] === '2' || Arr[6] === '3'){
+                return false;
+            }
+            for (let i=arr.length-1;i >= (arr.length-4);i--){
+                    if (Integer(arr[i])){
+                        return true;
+                    }else {
+                        return false;
+                    }
+            }
+        }
+        // hàm kiểm tra tên nhập vào phải nhỏ hơn hoặc bằng 50 thôi
+        function checkName(arr) {
+            if (arr.length >= 50)
+                return false;
+            else
+                return true;
+        }
+
+        // hàm kiểm tra xem module có từ 1 đến 6 hay không
+        function checkModlue(number) {
+            if(number >= 1 && number <=6){
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        function isValidDate(dateString) {
+            // Sử dụng biểu thức chính quy để kiểm tra định dạng ngày tháng
+            const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+
+            if (!datePattern.test(dateString)) {
+                // Định dạng không đúng
+                return false;
+            }
+
+            // Kiểm tra tính hợp lệ của ngày tháng
+            const parts = dateString.split("/");
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10);
+            const year = parseInt(parts[2], 10);
+
+            // Kiểm tra ngày, tháng, năm hợp lệ
+            if (isNaN(day) || isNaN(month) || isNaN(year)) {
+                return false;
+            }
+
+            // Kiểm tra tháng từ 1 đến 12 và ngày từ 1 đến 31
+            if (month < 1 || month > 12 || day < 1 || day > 31) {
+                return false;
+            }
+
+            // Kiểm tra năm hợp lệ (ví dụ: không làm việc với năm âm)
+            if (year < 0) {
+                return false;
+            }
+
+            // Kiểm tra ngày hợp lệ (ví dụ: tháng 2 không được nhiều hơn 29 ngày nếu năm nhuận)
+            if (month === 2) {
+                if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                    if (day > 29 ) {
+                        return false;
+                    }
+                } else {
+                    if (day > 28) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+        
+        
+        
+        
+        
+        function addAStudent() {
+
+            do {
+                var studentCode = prompt("Nhập vào id: ");
+            }while (!checkNumber(studentCode));
+
+            do {
+                var Name = prompt("Tên học viên: ");
+            }while(!checkName(Name));
+            let className = prompt("Học lớp: ");
+            let Email = prompt("Email: ");
+            do {
+                var birthday = prompt("ngày sinh: ");
+            } while (!isValidDate(birthday));
+            do {
+                var module = parseInt(prompt("module: "));
+            } while(!checkModlue(module));
+            let students = new Student(studentCode,Name,className,Email,birthday,module);
+            student.push(students);
+            display();
+        }
+
+
+        // chỉnh sửa một học viên
+        function editAStudent() {
+            let studentCode = prompt("Nhập vào ã học viên cần sửa chữa: ");
+            let studentToUpdate = student.find(student => student.studentCode === studentCode)
+            if (studentToUpdate){
+                let newName = prompt("Nhập tên sinh viên mới: ",studentToUpdate.Name);
+                let newClassName = prompt("Nhập vào tên lớp mới: ",studentToUpdate.className);
+                let newEmail = prompt("Nhập vào Email: ",studentToUpdate.Email);
+                let newBirthDay = prompt("Nhập vào ngày sinh: ",studentToUpdate.birthday);
+                let newModule = prompt("module: ",studentToUpdate.module);
+
+                studentToUpdate.Name = newName || studentToUpdate.Name;
+                studentToUpdate.className = newClassName || studentToUpdate.className;
+                studentToUpdate.Email = newEmail || studentToUpdate.Email;
+                studentToUpdate.birthday = newBirthDay || studentToUpdate.birthday;
+                studentToUpdate.module = newModule || studentToUpdate.module;
+            }else {
+                alert("không có trong danh sách.");
+            }
+            display();
+        }
+
+        // xóa một học viên
+        function deleteAStudent() {
+            let studentCode = prompt("Nhập vào id cần xóa: ");
+            let studentToUpdate = student.find(student => student.studentCode === studentCode);
+            if(studentToUpdate){
+                studentToUpdate.studentCode = " ";
+                studentToUpdate.Name = " ";
+                studentToUpdate.className = " ";
+                studentToUpdate.Email = " ";
+                studentToUpdate.birthday= " ";
+                studentToUpdate.module = " ";
+            }else{
+                alert("không có trong danh sách: ");
+            }
+            display();
+        }
+    </script>
+</body>
+</html>
